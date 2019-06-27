@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sukienbanphim</title>
+</head>
+<body>
+<img src="nobita.jpg" id="nobita">
+</body>
+<script>
+    let imgobj = null;
+    imgobj = document.getElementById("nobita");
+
+    function init() {
+        imgobj.style.position = "relative";
+        imgobj.style.left = "300px";
+        imgobj.style.top = "190px";
+        imgobj.style.height = '300px';
+        imgobj.style.width = 'auto';
+    }
+
+    window.onload = init();
+
+    function arrowUp() {
+        imgobj.style.top = parseInt(imgobj.style.top) - 10 + "px";
+
+    }
+
+    function arrowDown() {
+        imgobj.style.top = parseInt(imgobj.style.top) + 10 + "px";
+
+    }
+
+    function arrowLeft() {
+        imgobj.style.left = parseInt(imgobj.style.left) - 10 + "px";
+
+    }
+
+    function arrowRight() {
+        imgobj.style.left = parseInt(imgobj.style.left) + 10 + "px";
+
+    }
+
+    function moveSelection(uiui) {
+        switch (uiui.keyCode) {
+            case 38:
+                arrowUp();
+                break;
+            case 40:
+                arrowDown();
+                break;
+            case 39:
+                arrowRight();
+                break;
+            case 37:
+                arrowLeft();
+                break;
+        }
+    }
+
+    window.addEventListener('keydown', moveSelection);
+</script>
+</html>
